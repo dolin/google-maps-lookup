@@ -26,8 +26,8 @@ $(document).ready(function(){
   function initialize() {
      var geocoder = new google.maps.Geocoder();
      var mapOptions = {
-        zoom: 8,
-        center: new google.maps.LatLng(-34.397, 150.644),
+        zoom: 4,
+        center: new google.maps.LatLng(40.4230, -98.7372),
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       map = new google.maps.Map(document.getElementById('map_canvas'),
@@ -38,7 +38,7 @@ $(document).ready(function(){
 
   addLookup.click(function(){
     var searchInputVal = searchInput.val();
-    geocoder = new google.maps.Geocoder();
+    var geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': searchInputVal}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
